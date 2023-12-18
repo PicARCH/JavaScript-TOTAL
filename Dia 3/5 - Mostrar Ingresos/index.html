@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mostrar ingresos</title>
+</head>
+<body>
+    <!-- Un párrafo que indica "Ingresa tu Nombre" -->
+    <p>Ingresa tu Nombre</p>
+    <!-- Un campo de entrada de texto con un ID "nombreUsuario" -->
+    <input type="text" id="nombreUsuario">
+    <!-- Un botón con la etiqueta "Enviar" y un atributo onclick que llama a la función "mostrarNombre()" -->
+    <button onclick="mostrarNombre()">Enviar</button>
+    <!-- Un encabezado h2 con un ID "salida" que inicialmente dice "No se tu nombre" -->
+    <h2 id="salida">No se tu nombre</h2>
+    <!--
+        Explicación:
+
+        <p>Ingresa tu Nombre</p>: Proporciona una instrucción al usuario para 
+        ingresar su nombre.
+
+        <input type="text" id="nombreUsuario">: Un campo de entrada de texto 
+        que permite a los usuarios ingresar su nombre. Tiene el atributo id 
+        establecido como "nombreUsuario" para facilitar su identificación en JavaScript.
+
+        <button onclick="mostrarNombre()">Enviar</button>: Un botón que, cuando
+        es clicado, llama a la función mostrarNombre().
+
+        <h2 id="salida">No se tu nombre</h2>: Un encabezado <h2> que inicialmente
+        dice "No se tu nombre". Este es el lugar donde se mostrará el nombre 
+        después de hacer clic en el botón.
+    -->
+    
+    <script>
+        // Una función llamada mostrarNombre que obtiene el valor del campo de entrada y lo muestra en el elemento con el ID "salida"
+        function mostrarNombre(){
+            // Obtener el valor del campo de entrada con el ID "nombreUsuario"
+            let elementoNombre=document.getElementById("nombreUsuario").value;
+            // Obtener el elemento con el ID "salida"
+            let elementoTexto=document.getElementById("salida");
+            // Actualizar el contenido del elemento "salida" con el nombre ingresado
+            elementoTexto.textContent = "Te Llamas: "+ elementoNombre;
+        }
+        /*
+        Explicación:
+
+        let elementoNombre = document.getElementById("nombreUsuario").value;: 
+        Obtiene el valor del campo de entrada de texto con el ID "nombreUsuario"
+        y lo almacena en una variable llamada elementoNombre.
+
+        let elementoTexto = document.getElementById("salida");: Obtiene el elemento
+        con el ID "salida" y lo almacena en una variable llamada elementoTexto.
+
+        elementoTexto.textContent = "Te Llamas: " + elementoNombre;: Actualiza el
+        contenido del elemento "salida" con el mensaje "Te Llamas: " seguido del 
+        nombre ingresado. La propiedad textContent se utiliza para establecer el 
+        contenido de texto de un elemento HTML.
+        */
+    </script>
+</body>
+</html>
