@@ -24,7 +24,7 @@
         let elementoSegundo=document.getElementById("tiempoElegido");
         let elementoTextoAlarma= document.getElementById("textoAlarma");
         function comenzarTiempo(){
-            setTimeout(tiempoCumplido, 1000 * valorSegundo.value);
+            setTimeout(tiempoCumplido, 1000 * elementoSegundo.value);
         }
         function tiempoCumplido(){
             elementoTextoAlarma.textContent = "ENCENDIDO";

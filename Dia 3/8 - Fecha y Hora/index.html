@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fecha y Hora</title>
+</head>
+<body onload="comenzarReloj()">
+    <!-- 
+    <body>: Esta etiqueta HTML define el cuerpo del documento
+
+    onload="comenzarReloj()": Este atributo onload se utiliza para especificar una acción que debe
+        realizarse cuando la página web se carga completamente. En este caso, se establece en comenzarReloj(),
+        lo que significa que cuando la página haya cargado por completo, se iniciará la función comenzarReloj().
+
+    comenzarReloj(): Es la función que se ejecutará cuando la página web esté completamente cargada.
+        Esta función, como se mencionó en respuestas anteriores, inicia el reloj digital actualizando el contenido
+        de un elemento HTML con la hora actual.
+    -->
+
+    <h1 id="textoAlarma">00:00:00</h1>
+    <!--
+        <h1>: Es una etiqueta HTML que representa un encabezado de nivel 1.
+
+        id="textoAlarma": Es un atributo de la etiqueta <h1> que asigna un identificador único "textoAlarma"
+            al elemento.
+
+        00:00:00: Es el contenido inicial del encabezado. En este caso, parece ser una representación de tiempo
+        en formato de horas, minutos y segundos.
+    -->
+
+    <script>
+        let elementoTextoAlarma= document.getElementById("textoAlarma");
+        /* RELOJ */
+        function comenzarReloj(){
+            setInterval(ticTac , 1000*1);/* 1000 * 1 = 1 segundo */
+        }
+        function ticTac(){
+            let tiempoActual = new Date();
+            /*puedes mostrar solamente 1 si Quieres*/
+            let hora = tiempoActual.getHours();/* DEBE COLOCAR String(...).padStart(2,"0")*/
+            let minutos = tiempoActual.getMinutes();/* DEBE COLOCAR String(...).padStart(2,"0")*/
+            let segundos = String(tiempoActual.getSeconds()).padStart(2,"0");/* String(...).padStart(2,"0") significa formato de: 2 sera 02*/
+
+            let textHora =  hora + ":" + minutos + ":" + segundos;
+            elementoTextoAlarma.textContent = textHora;
+        }
+        /*
+        let elementoTextoAlarma = document.getElementById("textoAlarma");: Se obtiene una referencia 
+            al elemento HTML con el id "textoAlarma". Este elemento se utilizará para mostrar la hora actual.
+
+        function comenzarReloj(){: Se define la función comenzarReloj. Esta función se encargará de iniciar
+            el reloj llamando a la función ticTac cada segundo.
+
+        setInterval(ticTac, 1000*1);: Se utiliza la función setInterval para ejecutar la función ticTac cada
+            1000 milisegundos (1 segundo). Esto establece el intervalo para actualizar el reloj.
+
+        function ticTac(){: Se define la función ticTac, que se ejecutará cada segundo gracias al setInterval
+            mencionado anteriormente. Esta función obtiene la hora actual y actualiza el contenido del elemento
+            HTML con el id "textoAlarma" con la hora formateada.
+
+        let tiempoActual = new Date();: Se crea un objeto Date que representa la fecha y la hora actuales.
+
+        let hora = tiempoActual.getHours();: Se obtiene la hora actual del objeto Date.
+
+        let minutos = tiempoActual.getMinutes();: Se obtienen los minutos actuales del objeto Date.
+
+        let segundos = String(tiempoActual.getSeconds()).padStart(2, "0");: Se obtienen los segundos
+            actuales del objeto Date y se convierten a cadena. La función padStart(2, "0") se utiliza para
+            asegurarse de que los segundos siempre tengan al menos dos dígitos, añadiendo un cero al principio
+            si es necesario.
+
+        let textHora = hora + ":" + minutos + ":" + segundos;: Se concatenan las variables hora, minutos y segundos 
+            para formar una cadena que representa la hora en formato "hh:mm:ss".
+
+        elementoTextoAlarma.textContent = textHora;: Se actualiza el contenido del elemento HTML con el id "textoAlarma"
+            con la cadena de texto que representa la hora actual.
+        */
+    </script>
+    
+</body>
+</html>
