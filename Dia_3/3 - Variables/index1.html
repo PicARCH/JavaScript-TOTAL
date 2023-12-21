@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="eS">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>varible del ejemplo anterior</title>
+</head>
+<body>
+    <p>Ingrese su nombre</p>
+    <input type="text" id="nombreUsuario">    
+    <button onclick="saludarUsuario()">Enviar</button>
+
+    <script>
+        function saludarUsuario(){
+            let miNombre= document.getElementById("nombreUsuario").value;/*Variable UTILIZAR*/
+            alert("hola " + miNombre);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso de Usuario</title>
+</head>
+<body>
+    <!-- Un párrafo que indica "Ingresar Nombre de Usuario" -->
+    <p>Ingresar Nombre de Usuario</p>
+    <!-- Un campo de entrada de texto con un ID "nombreUsuario" -->
+    <input type="text" id="nombreUsuario">
+    <!-- Un botón con la etiqueta "Enviar" y un atributo onclick que llama a la función "saludarUsuario" -->
+    <button onclick="saludarUsuario()"> Enviar </button>
+
+    <!--
+        Explicación:
+
+        <p>Ingresar Nombre de Usuario</p>: Un párrafo HTML que proporciona una instrucción al usuario para ingresar su nombre.
+
+        <input type="text" id="nombreUsuario">: Un campo de entrada de texto (<input type="text">) que permite a los usuarios ingresar su nombre. Tiene el atributo id establecido como "nombreUsuario", lo que facilita su identificación en el JavaScript.
+
+        <button onclick="saludarUsuario()">Enviar</button>: Un botón HTML con la etiqueta "Enviar". Tiene un atributo onclick que llama a la función JavaScript saludarUsuario() cuando el botón se hace clic.
+    -->
+
+    <Script>
+        // Declaración de una función llamada saludarUsuario
+        function saludarUsuario(){
+            // Muestra una alerta con un mensaje que incluye el texto "Hola " y el valor del elemento con el id "nombreUsuario"
+            alert("Hola "+ document.getElementById("nombreUsuario").value)
+        }
+        /*
+        Explicación:
+
+        function saludarUsuario() {: Declaración de una función llamada saludarUsuario. Esta función no toma ningún argumento.
+
+        document.getElementById("nombreUsuario").value: Accede al elemento HTML con el ID "nombreUsuario" y obtiene su valor.document.getElementById("nombreUsuario") selecciona el elemento con el ID "nombreUsuario" en el documento HTML, y .value obtiene el valor del elemento, que se asume que es un campo de entrada (input).
+
+        "Hola " + ...: Concatenación de cadenas. Se concatena la cadena "Hola " con el valor obtenido del campo de entrada.
+
+        alert(...);: Muestra una alerta en el navegador con el mensaje resultante de la concatenación.
+        */
+    </Script>
+</body>
+</html>
