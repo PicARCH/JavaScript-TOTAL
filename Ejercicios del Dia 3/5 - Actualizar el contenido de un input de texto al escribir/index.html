@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="entradaTexto" oninput="actualizarTextoH2()" >
+    <h2 id="texto"></h2>
+
+    <!--  
+    oninput 
+
+    El evento se activa cuando se produce un cambio en un elemento de entrada (input) o textarea.
+    Este evento se utiliza principalmente para realizar acciones en tiempo 
+    real.
+    -->
+    <script>
+        let entradaTexto = document.getElementById("entradaTexto");
+        let texto=document.getElementById("texto");
+        function actualizarTextoH2(){
+            let valorEntrada=entradaTexto.value;
+            texto.textContent=valorEntrada;
+        }
+    </script>
+
+
+    
+</body>
+</html>
